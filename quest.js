@@ -6,7 +6,6 @@ var awesomeThingsProvider = new AwesomeThingsProvider('localhost', 27017);
 
 io.sockets.on('connection', function (socket) {
   
-  socket.emit('news', [ {name:'Esmeralda!'}, {name:'Daniel'}, {name:'Kingsley'}, {name:'Roxy'} ]);
   socket.on('getThings', function (data) {
     
   	awesomeThingsProvider.findAll(function(error, things){
