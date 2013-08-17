@@ -3,15 +3,10 @@
 angular.module('questApp')
   .controller('MainCtrl', function ($scope) {
 
-  	$scope.$on('socket:news', function(){
-  		console.log(arguments)
+  	$scope.$on('socket:news', function(event, obj){
+  		$scope.awesomeThings = obj;
   	})
    
-    $scope.awesomeThings = [
-      'Esmeralda',
-      'Daniel',
-      'Kingsley',
-      'Roxy'
-    ];
+    $scope.awesomeThings;
 
   });
