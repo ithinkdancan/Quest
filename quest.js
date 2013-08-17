@@ -1,13 +1,21 @@
 var io = require('socket.io').listen(1337);
+var AwesomeThingsProvider = require('./awesomethingsprovider').AwesomeThingsProvider;
+
+
+var awesomeThingsProvider = new AwesomeThingsProvider('localhost', 27017);
 
 io.sockets.on('connection', function (socket) {
-  socket.emit('news', [
-      'Esmeralda!',
-      'Daniel',
-      'Kingsley',
-      'Roxy'
-    ]);
-  socket.on('my other event', function (data) {
-    console.log(data);
+  
+  socket.emit('news', [ {name:'Esmeralda!'}, {name:'Daniel'}, {name:'Kingsley'}, {name:'Roxy'} ]);
+  socket.on('getThings', function (data) {
+    
+  	awesomeThingsProvider.findAll(function(error, things){
+		console.log(things)
+		console.log('EMMITTTING!!??');
+		socket.emit('news', things);
+	})
+
   });
 });
+
+
