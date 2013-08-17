@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('questApp', [])
+angular.module('questApp', ['btford.socket-io'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
