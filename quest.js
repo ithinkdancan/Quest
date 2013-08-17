@@ -1,20 +1,15 @@
 var io = require('socket.io').listen(1337);
-var AwesomeThingsProvider = require('./awesomethingsprovider').AwesomeThingsProvider;
-
-
-var awesomeThingsProvider = new AwesomeThingsProvider('localhost', 27017);
+var db = require('mongoskin').db('localhost:27017/quest');
 
 io.sockets.on('connection', function (socket) {
   
-  socket.on('getThings', function (data) {
-    
-  	awesomeThingsProvider.findAll(function(error, things){
-		console.log(things)
-		console.log('EMMITTTING!!??');
-		socket.emit('news', things);
-	})
+	socket.on('getThings', function (data) {
 
-  });
+		db.collection('awesomeThings').find().toArray(function(error, things){
+			socket.emit('news', things);
+		})
+
+  	});
 });
 
 
