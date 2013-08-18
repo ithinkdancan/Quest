@@ -12,17 +12,28 @@ Yeomon
 npm install -g yo grunt-cli bower
 ```
 
+###Bower Dependency Installation
+```
+bower install
+```
+
 #### Starting Grunt Server
 ```
 grunt server
 ```
 
-Node.Js & Nodemon
+Nodemon for Node.JS
 -------------------
 
-####Installation
+####Nodemon Installation
 ```
 npm install -g nodemon
+
+```
+
+####Dependency Installation
+```
+npm install
 ```
 
 
@@ -33,7 +44,7 @@ nodemon ./quest.js
 
 
 
-Mongo
+MongoDB
 -------------------------
 
 ####Installation
