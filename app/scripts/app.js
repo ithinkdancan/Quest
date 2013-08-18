@@ -19,8 +19,8 @@ angular.module('questApp', ['ui.compat', 'btford.socket-io'])
         url: "/room/{id}",
         views:{
             stage : {
-                controller: 'Room',
-                templateUrl: 'views/room.html'
+                controller: 'Quest',
+                templateUrl: 'views/quest.html'
             }
         }
     });

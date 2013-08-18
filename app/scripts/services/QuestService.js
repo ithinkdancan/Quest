@@ -1,4 +1,4 @@
-angular.module('questApp').factory('RoomService', ['$q', '$rootScope', 'socket', function($q, $rootScope, socket) {
+angular.module('questApp').factory('QuestService', ['$q', '$rootScope', 'socket', function($q, $rootScope, socket) {
 
 	return {
 		get: function (name, obj) {
