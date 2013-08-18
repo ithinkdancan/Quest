@@ -15,8 +15,8 @@ angular.module('questApp', ['ui.compat', 'btford.socket-io'])
                 templateUrl: 'views/list.html',
             }
         } 
-    }).state('room', {
-        url: "/room/{id}",
+    }).state('quest', {
+        url: "/quest/{id}",
         views:{
             stage : {
                 controller: 'Quest',
@@ -28,6 +28,6 @@ angular.module('questApp', ['ui.compat', 'btford.socket-io'])
 })
 .run(function (socket) {
 
-   socket.forward(['room:list','room:join', 'room:create']);
+   socket.forward(['quest:list','quest:join', 'quest:create']);
 
 });

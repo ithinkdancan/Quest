@@ -1,9 +1,9 @@
 <div ng-hide="creating">
   <h1>Quests</h1>
   <p>Open Quests:</p>
-  <p ng-show="!rooms.length">No Quests Found</p>
+  <p ng-show="!quests.length">No Quests Found</p>
   <ul>
-      <li ng-repeat="room in rooms"><a ng-href="#/room/{{room._id}}">{{room.name}}</a></li>
+      <li ng-repeat="quest in quests"><a ng-href="#/quest/{{quest._id}}">{{quest.name}}</a></li>
   </ul>
   <p>
   	<a href ng-click="creating=true">Create a Quest</a>
@@ -11,9 +11,9 @@
 </div>
 
 <div ng-show="creating">
-	<form ng-submit="createRoom()">
-		<label for="roomName">Name</label>
-		<input type="text" id="roomName" ng-model="roomName">
+	<form ng-submit="createQuest()">
+		<label for="questName">Name</label>
+		<input type="text" id="questName" ng-model="questName">
 		<button type="submit">Create</button>
 	</form>
 </div>
