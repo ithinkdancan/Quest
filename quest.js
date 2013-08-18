@@ -30,6 +30,12 @@ io.sockets.on('connection', function (socket) {
 
 	socket.on('quest:list', sendQuests)
 
+	socket.on('grails:list', function(){
+		db.collection('grails').find().toArray(function(error, grails){
+			socket.emit('grails:list', grails);
+		});		
+	})
+
 });
 
 
