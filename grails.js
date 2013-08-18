@@ -36,6 +36,6 @@
 	},{
 		name: 'Verts'
 	},{
-		name: 'Trudy's
+		name: 'Trudys'
 	}
 ]
