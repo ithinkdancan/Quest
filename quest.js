@@ -70,14 +70,12 @@ io.sockets.on('connection', function (socket) {
 
 						//pop off the leaving hero
 						quests.update(obj, {'$pull' : { heros: socket.id}}, function(){
-
+							console.log(arguments)
 							if(!io.sockets.sockets[obj.leader] && obj.heros[0]){
 								console.log('setting new leader', obj.heros[0]);
-								quests.update(obj, {'$set' : { 'leader': obj.heros[0]}}, function(error){
-									console.log('update errrrrrror', error)
-								});
+								quests.updateById(obj._id, {'$set' : { 'leader': obj.heros[0]}}, function(){});
 							} else {
-								quests.update(obj, {'$set' : { 'leader': ''}}, function(){});
+								quests.updateById(obj._id, {'$set' : { 'leader': ''}}, function(){});
 							}
 
 							updateQuest(obj._id);
