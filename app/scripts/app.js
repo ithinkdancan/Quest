@@ -28,6 +28,6 @@ angular.module('questApp', ['ui.compat', 'btford.socket-io'])
 })
 .run(function (socket) {
 
-   socket.forward(['quest:list','quest:join', 'quest:create']);
+   socket.forward(['quest:list','quest:join', 'quest:create', 'quest:update']);
 
 });

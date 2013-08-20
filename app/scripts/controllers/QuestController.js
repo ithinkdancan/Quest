@@ -9,6 +9,10 @@ angular.module('questApp')
     	return getRandomSubarray(obj,9);
     })
 
+    $scope.$on('socket:quest:update', function(event, obj){
+  		$scope.quest = obj;
+  	});
+
     var getRandomSubarray = function (arr, size) {
 	    var shuffled = arr.slice(0), i = arr.length, temp, index;
 	    
