@@ -5,25 +5,25 @@ angular.module('questApp')
 
     $scope.quest_id = $stateParams.id;
     $scope.quest = QuestService.get('quest:join', {id:$scope.quest_id});
-    $scope.grails = QuestService.get('grails:list').then(function(obj){
-    	return getRandomSubarray(obj,9);
-    })
+    // $scope.grails = QuestService.get('grails:list').then(function(obj){
+    // 	return getRandomSubarray(obj,9);
+    // })
 
     $scope.$on('socket:quest:update', function(event, obj){
   		$scope.quest = obj;
   	});
 
-    var getRandomSubarray = function (arr, size) {
-	    var shuffled = arr.slice(0), i = arr.length, temp, index;
+ //    var getRandomSubarray = function (arr, size) {
+	//     var shuffled = arr.slice(0), i = arr.length, temp, index;
 	    
-	    while (i--) {
-	        index = Math.floor(i * Math.random());
-	        temp = shuffled[index];
-	        shuffled[index] = shuffled[i];
-	        shuffled[i] = temp;
-	    }
+	//     while (i--) {
+	//         index = Math.floor(i * Math.random());
+	//         temp = shuffled[index];
+	//         shuffled[index] = shuffled[i];
+	//         shuffled[i] = temp;
+	//     }
 	    
-	    return shuffled.slice(0, size);
-	}
+	//     return shuffled.slice(0, size);
+	// }
 
   });
