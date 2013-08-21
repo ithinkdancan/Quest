@@ -6,30 +6,69 @@ var quests = db.collection('quests');
 io.sockets.on('connection', function (socket) {
 
 	var sendQuests = function (broadcast) {
-		quests.find().sort([['_id', -1]]).toArray(function(error, things){
+		quests.find({started:false}).sort([['_id', -1]]).toArray(function(error, things){
+			if(error) console.log('error in sendQuests')
 			broadcast ? socket.broadcast.emit('quest:list', things) : socket.emit('quest:list', things);
 		});		
 	}
 
-	var updateQuest = function (id) {
-		quests.findById(id, {}, function(error, obj){
+	var removeDeadHeros = function (obj) {
+
+		for (var i = 0; i < obj.heros.length; i++) {
+			if(!io.sockets.sockets[obj.heros[i]]){
+				quests.updateById(obj._id, {'$pull' : { heros: obj.heros[i]}}, function(){});
+			}
+		}
+
+	}
+
+	var updateQuest = function (obj) {
+
+		removeDeadHeros(obj);
+
+		quests.findById(obj._id, {}, function(error, obj){
+
 			if(obj.heros.length){
+
+				if(obj.heros.indexOf(obj.leader) < 0){
+					obj.leader = obj.heros[0]
+					quests.updateById(obj._id, {'$set' : { 'leader': obj.heros[0]}}, function(){});
+				}
+
 				for (var i = 0; i < obj.heros.length; i++) {
+
 					if(io.sockets.sockets[obj.heros[i]]){
 						io.sockets.sockets[obj.heros[i]].emit('quest:update', obj);
-					} else {
-						quests.update(obj, {'$pull' : { heros: obj.heros[i]}}, function(){});
 					}
+
+					if(obj.heros[i] === obj.leader){
+						console.log('found my leader')
+						io.sockets.sockets[obj.heros[i]].emit('quest:lead', true);
+					} 
+
 				};
+			} else {
+				console.log('room is empty!')
 			}
 		})
 	};
 
+	//send a list of quests
+	socket.on('quest:list', sendQuests)
+
 	socket.on('quest:create', function(obj){
-		quests.insert({name: obj.name, heros: [], leader: socket.id}, null, function(error, obj){
-			socket.emit('quest:create', obj[0]);
-			sendQuests(true);
-		});
+		quests.insert({
+				name: obj.name, 
+				heros: [], 
+				leader: socket.id,
+				started: false
+			}, 
+			null, 
+			function(error, obj){
+				socket.emit('quest:create', obj[0]);
+				sendQuests(true);
+			}
+		);
 	});
 
 	//Join a quest
@@ -37,15 +76,26 @@ io.sockets.on('connection', function (socket) {
 		quests.findById(obj.id, {}, function(error, obj){
 			socket.set('currentQuest', obj._id, function () {
 				quests.update(obj, {'$push' : { heros: socket.id}}, function(){
-					updateQuest(obj._id);
+					updateQuest(obj);
 				});
 				
 			});
 		});
 	})
 
-	//send a list of quests
-	socket.on('quest:list', sendQuests)
+	socket.on('quest:start', function(){
+		socket.get('currentQuest', function (error, quest_id) {
+			quests.findById(quest_id, {}, function(error, obj){
+				if(socket.id === obj.leader){
+					quests.updateById(obj._id, {'$set' : { 'started': true}}, function(){
+						updateQuest(obj);
+					});
+				}
+			});
+		});
+	})
+
+
 
 	//sent a list of grails
 	socket.on('grails:list', function(){
@@ -64,22 +114,11 @@ io.sockets.on('connection', function (socket) {
 				//get the quest record from the DB
 				quests.findById(quest_id, {}, function(error, obj){
 					
-					if(error) console.log('bad error', error);
-					
-					else if(obj.heros){
+					if(obj.heros){
 
 						//pop off the leaving hero
 						quests.update(obj, {'$pull' : { heros: socket.id}}, function(){
-							console.log(arguments)
-							if(!io.sockets.sockets[obj.leader] && obj.heros[0]){
-								console.log('setting new leader', obj.heros[0]);
-								quests.updateById(obj._id, {'$set' : { 'leader': obj.heros[0]}}, function(){});
-							} else {
-								quests.updateById(obj._id, {'$set' : { 'leader': ''}}, function(){});
-							}
-
-							updateQuest(obj._id);
-
+							updateQuest(obj);
 						});
 						
 					}

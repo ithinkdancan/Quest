@@ -1,8 +1,13 @@
 <p>Quest: {{quest.name}}</p>
-<p>Heros: {{quest.heros.length}}</p>
+<p># Heros: {{quest.heros.length}}</p>
+<div>Leader: {{quest.leader}}</div>
 
-<div>{{quest.heros}}</div>
+<div ng-show="lead">
+	<a href="javascript:;" ng-click="startQuest()">Start</a>
+</div>
 
-<div>{{quest.leader}}</div>
+<div ng-show="quest.started">
+	The Quest Has Started!!!
+</div>
 
 {{grails}}
