@@ -1,6 +1,11 @@
 var io = require('socket.io').listen(process.env.PORT || 1337);
 var db = require('mongoskin').db(process.env.MONGOLAB_URI || 'localhost:27017/quest?auto_reconnect', {w: 1});
 
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
+
 var quests = db.collection('quests');
 
     var getRandomSubarray = function (arr, size, groupSize) {
