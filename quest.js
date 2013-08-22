@@ -1,5 +1,5 @@
 var io = require('socket.io').listen(1337);
-var db = require('mongoskin').db('heroku_app17664887:8efno7ot3dlmdb6r063ef1v3la@ds041248.mongolab.com:41248/heroku_app17664887', {w: 1});
+var db = require('mongoskin').db('mongodb://heroku_app17664887:8efno7ot3dlmdb6r063ef1v3la@ds041248.mongolab.com:41248/heroku_app17664887', {w: 1});
 
 var quests = db.collection('quests');
 
