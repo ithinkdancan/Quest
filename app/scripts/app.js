@@ -4,6 +4,8 @@ angular.module('questApp', ['ui.compat', 'btford.socket-io'])
 .config(function ($stateProvider, socketProvider) {
 
     socketProvider.ioSocket(io.connect('ws://'+window.location.hostname+':1337'));
+    //Heroku Socket
+    //socketProvider.ioSocket(io.connect('http://thawing-sierra-6634.herokuapp.com:80')); 
 
     $stateProvider
     .state('index', {
