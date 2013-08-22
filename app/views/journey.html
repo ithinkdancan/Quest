@@ -1,0 +1,14 @@
+<div>
+	<ul ng-show="grails[0]">
+		<p>Please select one:</p>
+		<li ng-repeat="grail in grails[0]">
+			<a href="javascript:;" ng-click="pickGrail(grail._id)">{{grail.name}}</a>
+		</li>
+	</ul>
+	<p ng-show="!grails[0] && !winner">
+		Please wait while your fellow heros complete their selections!
+	</p>
+	<p ng-show="winner">
+		Today's Quest: {{winner.name}}
+	</p>
+</div>

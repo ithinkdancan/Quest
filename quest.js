@@ -3,11 +3,32 @@ var db = require('mongoskin').db('localhost:27017/quest?auto_reconnect', {w: 1})
 
 var quests = db.collection('quests');
 
+    var getRandomSubarray = function (arr, size, groupSize) {
+	    var shuffled = arr.slice(0), i = arr.length, temp, index;
+	    var grouped = [];
+	    
+	    while (i--) {
+	        index = Math.floor(i * Math.random());
+	        temp = shuffled[index];
+	        shuffled[index] = shuffled[i];
+	        shuffled[i] = temp;
+	    }
+	    
+	    shuffled = shuffled.slice(0, size);
+
+
+	   while(shuffled.length){
+	   	 grouped.push(shuffled.splice(0, groupSize)); 
+	   }
+
+	   return grouped;
+
+	}
+
 io.sockets.on('connection', function (socket) {
 
 	var sendQuests = function (broadcast) {
 		quests.find({started:false}).sort([['_id', -1]]).toArray(function(error, things){
-			if(error) console.log('error in sendQuests')
 			broadcast ? socket.broadcast.emit('quest:list', things) : socket.emit('quest:list', things);
 		});		
 	}
@@ -42,7 +63,6 @@ io.sockets.on('connection', function (socket) {
 					}
 
 					if(obj.heros[i] === obj.leader){
-						console.log('found my leader')
 						io.sockets.sockets[obj.heros[i]].emit('quest:lead', true);
 					} 
 
@@ -50,7 +70,45 @@ io.sockets.on('connection', function (socket) {
 			} else {
 				console.log('room is empty!')
 			}
+		})	
+	};
+
+	var champion = function (quest, grail_id) {
+		console.log(grail_id)
+		db.collection('grails').findById(grail_id, {}, function (error, grail) {
+			quests.updateById(quest._id, {'$set' : { 'champion': grail._id}}, function(){});
+			for (var i = 0; i < quest.heros.length; i++) {
+				io.sockets.sockets[quest.heros[i]].emit('quest:complete', {name: grail.name});
+			}
 		})
+
+	}
+
+	var fight = function (quest_id) {
+
+		var results = {};
+		var arrayResults = []
+		var id;
+
+		quests.findById(quest_id, {}, function(error, obj){
+			for (var i = 0; i < obj.votes.length; i++) {
+				for (var j = 0; j < obj.votes[i].length; j++) {
+					id = obj.votes[i][j];
+					results[id] = results[id] ? results[id]+1 : 1;
+				};
+			};
+
+		for (o in results){
+			arrayResults.push({id:o, votes: results[o]});
+		}
+
+		var grail = arrayResults.sort(function(a,b){ return b.votes - a.votes })[0];
+
+		champion(obj, grail.id)
+
+		});
+
+		
 	};
 
 	//send a list of quests
@@ -61,7 +119,9 @@ io.sockets.on('connection', function (socket) {
 				name: obj.name, 
 				heros: [], 
 				leader: socket.id,
-				started: false
+				started: false,
+				votes: [],
+				champion: false
 			}, 
 			null, 
 			function(error, obj){
@@ -74,12 +134,17 @@ io.sockets.on('connection', function (socket) {
 	//Join a quest
 	socket.on('quest:join', function(obj){
 		quests.findById(obj.id, {}, function(error, obj){
-			socket.set('currentQuest', obj._id, function () {
-				quests.update(obj, {'$push' : { heros: socket.id}}, function(){
-					updateQuest(obj);
+			if(obj.started){
+				socket.emit('quest:leave');
+			} else {
+				socket.set('currentQuest', obj._id, function () {
+					quests.update(obj, {'$push' : { heros: socket.id}}, function(){
+						updateQuest(obj);
+					});
+					
 				});
+			}
 				
-			});
 		});
 	})
 
@@ -89,18 +154,35 @@ io.sockets.on('connection', function (socket) {
 				if(socket.id === obj.leader){
 					quests.updateById(obj._id, {'$set' : { 'started': true}}, function(){
 						updateQuest(obj);
+						sendQuests(true);
 					});
 				}
 			});
 		});
 	})
 
+	socket.on('quest:save', function (votes) {
+		socket.get('currentQuest', function (error, quest_id) {
+			quests.findById(quest_id, {}, function(error, obj){
+				console.log('votes', votes)
+				quests.update(obj, {'$push' : { votes: votes }}, function(){});
+
+				if(obj.votes.length+1 >= obj.heros.length){
+					fight(obj._id);
+				}
+
+			});
+			
+
+		});
+	});
+
 
 
 	//sent a list of grails
 	socket.on('grails:list', function(){
 		db.collection('grails').find().toArray(function(error, grails){
-			socket.emit('grails:list', grails);
+			socket.emit('grails:list', getRandomSubarray(grails,12,4));
 		});		
 	})
 
