@@ -2,10 +2,10 @@ var app = require("http").createServer(),
 	io = require('socket.io').listen(app),
 	db = require('mongoskin').db(process.env.MONGOLAB_URI || 'localhost:27017/quest?auto_reconnect', {w: 1});
 
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
+// io.configure(function () { 
+//   io.set("transports", ["xhr-polling"]); 
+//   io.set("polling duration", 10); 
+// });
 
 app.listen(process.env.PORT || 1337);
 
@@ -148,6 +148,7 @@ io.sockets.on('connection', function (socket) {
 				socket.set('currentQuest', obj._id, function () {
 					quests.update(obj, {'$push' : { heros: socket.id}}, function(){
 						updateQuest(obj);
+						sendQuests(true);
 					});
 					
 				});
@@ -185,7 +186,15 @@ io.sockets.on('connection', function (socket) {
 		});
 	});
 
-
+	socket.on('quest:leave', function(){
+		socket.get('currentQuest', function (error, quest_id) {
+			if(quest_id){
+				quests.updateById(quest_id, {'$pull' : { heros: socket.id}}, function(){
+					sendQuests(true);
+				});
+			}
+		})
+	})
 
 	//sent a list of grails
 	socket.on('grails:list', function(){
@@ -209,6 +218,7 @@ io.sockets.on('connection', function (socket) {
 						//pop off the leaving hero
 						quests.update(obj, {'$pull' : { heros: socket.id}}, function(){
 							updateQuest(obj);
+							sendQuests(true);
 						});
 						
 					}

@@ -16,102 +16,121 @@ header {
   text-align: center;
   color: #FFF;
   font-size: 2.5em;
-  text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px -1px rgba(0, 0, 0, 0.3);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   position: relative;
   background-image: url(/images/100-90-5.png);
 }
 
-/* line 27, main.scss */
+/* line 28, main.scss */
 .instruction {
-  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px rgba(255, 255, 255, 0.6);
   padding: 12px 0;
   color: #595959;
-  background: #f6f4f5 url(/images/section.png) bottom center repeat-x;
+  background-color: #f6f4f5;
+  background-image: url(/images/section.png);
+  background-repeat: repeat-x;
+  background-position: bottom center;
 }
 
-/* line 34, main.scss */
+/* line 38, main.scss */
 .list {
   background: #beb5b0;
   padding: 10px;
 }
 
-/* line 39, main.scss */
+/* line 43, main.scss */
 .list-container {
   background-color: #FFF;
-  background-size: 2px 2px;
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.02) 50%, transparent 50%, transparent);
+  background-size: 3px 3px;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.01) 50%, transparent 50%, transparent);
   border-radius: 5px;
+  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.06);
 }
 
-/* line 46, main.scss */
+/* line 51, main.scss */
 .list-item {
   text-align: left;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
 }
-/* line 52, main.scss */
+/* line 57, main.scss */
 .list-item a {
   padding: 1em;
   font-size: 1.5em;
   display: block;
   color: #367270;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px rgba(255, 255, 255, 0.6);
   text-decoration: none;
 }
 
-/* line 62, main.scss */
+/* line 67, main.scss */
 .list-item-action {
   text-align: center;
 }
-/* line 65, main.scss */
+/* line 70, main.scss */
 .list-item-action a {
   color: #c94338;
 }
 
-/* line 71, main.scss */
+/* line 76, main.scss */
 .list-item:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* line 75, main.scss */
+/* line 80, main.scss */
 .list-item:first-child {
   border-radius: 5px 5px 0 0;
 }
 
-/* line 79, main.scss */
+/* line 84, main.scss */
 .list-item:last-child {
   border-radius: 0 0 5px 5px;
   border-bottom: none;
 }
 
-/* line 85, main.scss */
+/* line 90, main.scss */
 input {
   width: 100%;
   box-sizing: border-box;
 }
 
-/* line 90, main.scss */
+/* line 95, main.scss */
 .input-container {
   padding: 1em;
   font-size: 1.5em;
 }
-/* line 93, main.scss */
+/* line 98, main.scss */
 .input-container input {
   font-size: 1em;
   background: none;
   border: none;
   font-family: 'Bitter', serif;
+  outline: none;
 }
 
-/* line 101, main.scss */
+/* line 107, main.scss */
+.count {
+  float: right;
+  background: #cfcfcf;
+  font-size: .6em;
+  padding: .4em .5em;
+  border-radius: 3px;
+  box-shadow: inset 0px 1px 3px 0 rgba(0, 0, 0, 0.3);
+  color: #c94338;
+}
+
+/* line 117, main.scss */
 .waiting {
   font-size: 1.3em;
   padding: 1em 0;
   color: #595959;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px rgba(255, 255, 255, 0.6);
 }
 
-/* line 108, main.scss */
+/* line 124, main.scss */
 .winner {
   color: #c94338;
   font-size: 1.5em;

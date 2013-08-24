@@ -47,4 +47,8 @@ angular.module('questApp')
       }
     };
 
+    $scope.$on('$destroy', function () {
+      socket.emit('quest:leave');
+    })
+
   });

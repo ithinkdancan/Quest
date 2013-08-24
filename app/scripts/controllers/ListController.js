@@ -7,9 +7,14 @@ angular.module('questApp')
     $scope.quest = {};
 
   	$scope.createQuest = function () {
-  		QuestService.get('quest:create', {name: $scope.quest.name}, true).then(function(obj) {
-  			$location.path('/quest/' + obj._id);
-  		});
+      if(!$scope.quest.name){
+        $scope.list.creating = false;
+      } else {
+        QuestService.get('quest:create', {name: $scope.quest.name}, true).then(function(obj) {
+          $location.path('/quest/' + obj._id);
+        });
+      }
+  
   	};
 
   	$scope.$on('socket:quest:list', function(event, obj){

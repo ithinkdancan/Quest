@@ -2,13 +2,12 @@
   <div class="instruction">Select a Quest</div>
   <div class="list">
     <ul class="list-container">
-      <li ng-repeat="quest in quests" class="list-item"><a ng-href="#/quest/{{quest._id}}">{{quest.name}}</a></li>
+      <li ng-repeat="quest in quests" class="list-item"><a ng-href="#/quest/{{quest._id}}"><span class="count">{{quest.heros.length}}</span>{{quest.name}}</a>
+
+      </li>
       <li class="list-item" ng-if="list.creating==true">
         <div class="input-container">
-        <form ng-submit="createQuest()">
-          <input type="text" id="questName" ng-model="quest.name">
-          <button type="submit">Create</button>
-        </form>
+          <input type="text" id="questName" ng-model="quest.name" placeholder="Quest Name" ng-focus="list.creating==true" ng-focus-lost="createQuest()">
         </div>
       </li>
       <li class="list-item list-item-action" ng-if="!list.creating">
