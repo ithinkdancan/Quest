@@ -3,8 +3,11 @@
 angular.module('questApp')
   .controller('List', function ($scope, $state, $location, socket, QuestService) {
 
+    $scope.list = {};
+    $scope.quest = {};
+
   	$scope.createQuest = function () {
-  		QuestService.get('quest:create', {name: $scope.questName}, true).then(function(obj) {
+  		QuestService.get('quest:create', {name: $scope.quest.name}, true).then(function(obj) {
   			$location.path('/quest/' + obj._id);
   		});
   	};

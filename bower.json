@@ -6,7 +6,8 @@
     "angular-bootstrap": "~0.5.0",
     "angular-socket-io": "~0.2.0",
     "angular-ui-router": "~0.0.1",
-    "socket.io-client": "~0.9.16"
+    "socket.io-client": "~0.9.16",
+    "reset-css": "~2.0.20110126"
   },
   "devDependencies": {}
 }

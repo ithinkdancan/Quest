@@ -187,7 +187,7 @@ io.sockets.on('connection', function (socket) {
 	//sent a list of grails
 	socket.on('grails:list', function(){
 		db.collection('grails').find().toArray(function(error, grails){
-			socket.emit('grails:list', getRandomSubarray(grails,12,4));
+			socket.emit('grails:list', getRandomSubarray(grails,25,5));
 		});		
 	})
 

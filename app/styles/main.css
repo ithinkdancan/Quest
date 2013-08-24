@@ -1,0 +1,118 @@
+/* line 1, main.scss */
+body {
+  background: #beb5b0;
+  margin: 0;
+  padding: 0;
+  font-family: 'Bitter', serif;
+  color: #FFF;
+  text-align: center;
+  background-image: url(/images/100-90-5.png);
+}
+
+/* line 11, main.scss */
+header {
+  background: #c94338;
+  padding: 15px 0;
+  text-align: center;
+  color: #FFF;
+  font-size: 2.5em;
+  text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  background-image: url(/images/100-90-5.png);
+}
+
+/* line 27, main.scss */
+.instruction {
+  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+  padding: 12px 0;
+  color: #595959;
+  background: #f6f4f5 url(/images/section.png) bottom center repeat-x;
+}
+
+/* line 34, main.scss */
+.list {
+  background: #beb5b0;
+  padding: 10px;
+}
+
+/* line 39, main.scss */
+.list-container {
+  background-color: #FFF;
+  background-size: 2px 2px;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.02) 50%, transparent 50%, transparent);
+  border-radius: 5px;
+}
+
+/* line 46, main.scss */
+.list-item {
+  text-align: left;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+/* line 52, main.scss */
+.list-item a {
+  padding: 1em;
+  font-size: 1.5em;
+  display: block;
+  color: #367270;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+/* line 62, main.scss */
+.list-item-action {
+  text-align: center;
+}
+/* line 65, main.scss */
+.list-item-action a {
+  color: #c94338;
+}
+
+/* line 71, main.scss */
+.list-item:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* line 75, main.scss */
+.list-item:first-child {
+  border-radius: 5px 5px 0 0;
+}
+
+/* line 79, main.scss */
+.list-item:last-child {
+  border-radius: 0 0 5px 5px;
+  border-bottom: none;
+}
+
+/* line 85, main.scss */
+input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* line 90, main.scss */
+.input-container {
+  padding: 1em;
+  font-size: 1.5em;
+}
+/* line 93, main.scss */
+.input-container input {
+  font-size: 1em;
+  background: none;
+  border: none;
+  font-family: 'Bitter', serif;
+}
+
+/* line 101, main.scss */
+.waiting {
+  font-size: 1.3em;
+  padding: 1em 0;
+  color: #595959;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* line 108, main.scss */
+.winner {
+  color: #c94338;
+  font-size: 1.5em;
+}

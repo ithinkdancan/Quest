@@ -1,14 +1,17 @@
-<div>
-	<ul ng-show="grails[0]">
-		<p>Please select one:</p>
-		<li ng-repeat="grail in grails[0]">
+<div class="instruction">
+	Please Select One
+</div>
+<div class="list" ng-show="grails[0]">
+	<ul class="list-container">
+		<li ng-repeat="grail in grails[0]" class="list-item">
 			<a href="javascript:;" ng-click="pickGrail(grail._id)">{{grail.name}}</a>
 		</li>
 	</ul>
-	<p ng-show="!grails[0] && !winner">
-		Please wait while your fellow heros complete their selections!
-	</p>
-	<p ng-show="winner">
-		Today's Quest: {{winner.name}}
-	</p>
+</div>
+<p ng-show="!grails[0] && !winner" class="waiting">
+	Please wait while your fellow heros complete their selections!
+</p>
+<div ng-show="winner" class="waiting">
+	<div>Today's Quest</div>
+	<div class="winner">{{winner.name}}</div>
 </div>
