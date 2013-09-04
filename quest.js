@@ -1,13 +1,13 @@
-var app = require("http").createServer(),
-	io = require('socket.io').listen(app),
-	db = require('mongoskin').db(process.env.MONGOLAB_URI || 'localhost:27017/quest?auto_reconnect', {w: 1});
+var http = require("http"),
+	static = require('node-static'),
+	io = require('socket.io').listen(1337),
+	db = require('mongoskin').db(process.env.MONGOLAB_URI || 'localhost:27017/quest?auto_reconnect', {w: 1}),
+	folder = new(static.Server)('./app');
 
-// io.configure(function () { 
-//   io.set("transports", ["xhr-polling"]); 
-//   io.set("polling duration", 10); 
-// });
 
-app.listen(process.env.PORT || 1337);
+http.createServer(function (req, res) {
+    folder.serve(req, res);
+}).listen(8080);
 
 var quests = db.collection('quests');
 
