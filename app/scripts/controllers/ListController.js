@@ -17,6 +17,12 @@ angular.module('questApp')
   
   	};
 
+    $scope.onKeyPress = function ($event) {
+      if($event.which == 13){
+        $scope.createQuest();
+      }
+    }
+
   	$scope.$on('socket:quest:list', function(event, obj){
   		$scope.quests = obj;
   	});

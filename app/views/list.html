@@ -7,7 +7,7 @@
       </li>
       <li class="list-item" ng-if="list.creating==true">
         <div class="input-container">
-          <input type="text" id="questName" ng-model="quest.name" placeholder="Quest Name" ng-focus="list.creating==true" ng-focus-lost="createQuest()">
+          <input type="text" id="questName" ng-model="quest.name" placeholder="Quest Name" ng-focus="list.creating==true" ng-focus-lost="createQuest()" ng-keypress="onKeyPress($event)">
         </div>
       </li>
       <li class="list-item list-item-action" ng-if="!list.creating">
