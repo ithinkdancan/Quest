@@ -1,12 +1,16 @@
 <div class="instruction">
 	{{quest.name}}
 </div>
-<div ng-show="!lead" class="waiting">Waiting for Heros...</div>
+
+<div class="waiting">
+	<div class="winner">{{quest.heros.length}} <ng-pluralize count="quest.heros.length" when="{'one': 'Hero', 'other': 'Heros'}"></ng-pluralize></div>
+	<div>Gathering Heros...</div>
+</div>
 
 <div class="list">
 	<ul ng-show="lead" class="list-container">
 		<li class="list-item list-item-action">
-			<a href="javascript:;" ng-click="startQuest()">Begin Your Quest!</a>
+			<a href="javascript:;" ng-click="startQuest()">Begin The Quest!</a>
 		</li>
 	</ul>
-</div
+</div>
