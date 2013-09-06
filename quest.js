@@ -86,7 +86,7 @@ io.sockets.on('connection', function (socket) {
 		db.collection('grails').findById(grail_id, {}, function (error, grail) {
 			quests.updateById(quest._id, {'$set' : { 'champion': grail._id}}, function(){});
 			for (var i = 0; i < quest.heros.length; i++) {
-				io.sockets.sockets[quest.heros[i]].emit('quest:complete', {name: grail.name});
+				io.sockets.sockets[quest.heros[i]].emit('quest:complete', grail);
 			}
 		})
 
