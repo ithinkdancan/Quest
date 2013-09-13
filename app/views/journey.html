@@ -1,5 +1,6 @@
 <div class="instruction">
-	Please Select One
+	<div ng-show="grails[0]">Please Select One</div>
+	<div ng-show="winner">Today's Quest</div>
 </div>
 <div class="list" ng-show="grails[0]">
 	<ul class="list-container">
@@ -12,7 +13,6 @@
 	Please wait while your fellow heros complete their selections!
 </p>
 <div ng-show="winner" class="waiting">
-	<div>Today's Quest</div>
 	<div class="winner">{{winner.name}}</div>
 	<div>{{winner.address}}</div>
 </div>
