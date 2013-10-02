@@ -1,8 +1,8 @@
 <div>
   <div class="instruction">
-    <span ng-if="!quests.length>0">Loading...</span>
+    <span ng-if="!quests">Loading...</span>
     <span ng-if="quests.length>0">Select a Quest</span>
-    <span ng-if="quest.length==0">There Are No Active Quests</span>
+    <span ng-if="quests.length==0">There Are No Active Quests</span>
   </div>
   <div class="list">
     <ul class="list-container">
