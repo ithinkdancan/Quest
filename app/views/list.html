@@ -1,5 +1,8 @@
 <div>
-  <div class="instruction">Select a Quest</div>
+  <div class="instruction">
+    <span ng-if="quests">Select a Quest</span>
+    <span ng-if="!quests">There Are No Active Quests</span>
+  </div>
   <div class="list">
     <ul class="list-container">
       <li ng-repeat="quest in quests" class="list-item"><a ng-href="#/quest/{{quest._id}}"><span class="count">{{quest.heros.length}}</span>{{quest.name}}</a>
