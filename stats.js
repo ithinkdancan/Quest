@@ -26,6 +26,9 @@
 				if(e.votes){
 					e.votes.forEach(function(e1){
 						e1.forEach(function(e2){
+							if(grailsObject[e2]){
+								grailsObject[e2].votes++;
+							}
 							votes[e2] = votes[e2] ? votes[e2]+1 : 1;
 						})
 					})
@@ -35,15 +38,17 @@
 
 			//sort the champion results
 			for (o in champions){
-				arrayResults.push({id:o, name: grailsObject[o], votes: champions[o]});
+				arrayResults.push({id:o, name: grailsObject[o].name, votes: champions[o]});
 			}
 			arrayResults = arrayResults.sort(function(a,b){ return b.votes - a.votes });
 
 			//sort the votes results
-			for (o in votes){
-				arrayVotesResults.push({id:o, name: grailsObject[o], votes: votes[o]});
+			for (o in grailsObject){
+				arrayVotesResults.push({id:o, name: grailsObject[o].name, votes: grailsObject[o].votes});
 			}
 			arrayVotesResults = arrayVotesResults.sort(function(a,b){ return b.votes - a.votes });
+
+
 
 			console.log("\n\nGrails By Wins\n-----------");
 			arrayResults.forEach(function(e){
@@ -56,9 +61,6 @@
 			})
 
 			console.log("\n\n");
-
-			// console.log(arrayResults);
-			// console.log(arrayVotesResults)
 
 			process.exit();
 
@@ -75,9 +77,10 @@
 	grails.find().toArray(function(error, results){
 
 		results.forEach(function(e){
-
-			grailsObject[e._id] = e.name
-
+			grailsObject[e._id] = {
+				name: e.name,
+				votes: 0
+			}
 		})
 
 		topFive();
