@@ -38,7 +38,9 @@
 
 			//sort the champion results
 			for (o in champions){
-				arrayResults.push({id:o, name: grailsObject[o].name, votes: champions[o]});
+				if(grailsObject[o]){
+					arrayResults.push({id:o, name: grailsObject[o].name, votes: champions[o]});
+				}
 			}
 			arrayResults = arrayResults.sort(function(a,b){ return b.votes - a.votes });
 
