@@ -40,6 +40,7 @@
 			for (o in champions){
 				if(grailsObject[o]){
 					arrayResults.push({id:o, name: grailsObject[o].name, votes: champions[o]});
+					db.collection('grails').updateById(o, {'$set' : { 'wins' : champions[o]}}, function(){});
 				}
 			}
 			arrayResults = arrayResults.sort(function(a,b){ return b.votes - a.votes });
@@ -47,6 +48,7 @@
 			//sort the votes results
 			for (o in grailsObject){
 				arrayVotesResults.push({id:o, name: grailsObject[o].name, votes: grailsObject[o].votes});
+				db.collection('grails').updateById(o, {'$set' : { 'votes' : grailsObject[o].votes}}, function(){});
 			}
 			arrayVotesResults = arrayVotesResults.sort(function(a,b){ return b.votes - a.votes });
 

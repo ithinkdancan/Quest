@@ -4,6 +4,8 @@ var http = require("http"),
 	db = require('mongoskin').db(process.env.MONGOLAB_URI || 'localhost:27017/quest?auto_reconnect', {w: 1}),
 	folder = new(static.Server)('./app');
 
+//reduce Socket.IO logging
+io.set('log level', 1);
 
 http.createServer(function (req, res) {
     folder.serve(req, res);
@@ -82,9 +84,10 @@ io.sockets.on('connection', function (socket) {
 	};
 
 	var champion = function (quest, grail_id) {
-		console.log(grail_id)
+
 		db.collection('grails').findById(grail_id, {}, function (error, grail) {
 			quests.updateById(quest._id, {'$set' : { 'champion': grail._id}}, function(){});
+			db.collection('grails').updateById(grail._id, {'$inc' : { 'wins' : 1}}, function(){});
 			for (var i = 0; i < quest.heros.length; i++) {
 				io.sockets.sockets[quest.heros[i]].emit('quest:complete', grail);
 			}
@@ -106,8 +109,13 @@ io.sockets.on('connection', function (socket) {
 				};
 			};
 
+		//store the votes in a sortable format
 		for (o in results){
 			arrayResults.push({id:o, votes: results[o]});
+
+			db.collection('grails').updateById(o, {'$inc' : { 'votes' : results[o]}}, function(error){
+				if(error) { console.log('Error Incrementing Grail Votes'); }
+			});
 		}
 
 		var grail = arrayResults.sort(function(a,b){ return b.votes - a.votes })[0];
@@ -173,7 +181,7 @@ io.sockets.on('connection', function (socket) {
 	socket.on('quest:save', function (votes) {
 		socket.get('currentQuest', function (error, quest_id) {
 			quests.findById(quest_id, {}, function(error, obj){
-				console.log('votes', votes)
+
 				quests.update(obj, {'$push' : { votes: votes }}, function(){});
 
 				if(obj.votes.length+1 >= obj.heros.length){
