@@ -118,7 +118,9 @@ io.sockets.on('connection', function (socket) {
 			});
 		}
 
-		var grail = arrayResults.sort(function(a,b){ return b.votes - a.votes })[0];
+		var sortedResults = arrayResults.sort(function(a,b){ return b.votes - a.votes });
+
+		var grail = sortedResults[0];
 
 		champion(obj, grail.id)
 
@@ -206,8 +208,17 @@ io.sockets.on('connection', function (socket) {
 
 	//sent a list of grails
 	socket.on('grails:list', function(){
-		db.collection('grails').find().toArray(function(error, grails){
-			socket.emit('grails:list', getRandomSubarray(grails,25,5));
+
+		//get the top voted grails
+		db.collection('grails').find().sort({votes:-1}).skip(2).limit(30).toArray(function(error, grails){
+
+			//get the least voted grails
+			db.collection('grails').find().sort({votes:1}).limit(5).toArray(function(error, grailsLeast){
+			
+				socket.emit('grails:list', getRandomSubarray(grails.concat(grailsLeast),20,5));
+
+			});
+		
 		});		
 	})
 

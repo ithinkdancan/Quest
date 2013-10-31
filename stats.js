@@ -12,7 +12,7 @@
 	var arrayVotesResults = [];
 
 
-	//Get Top 5 Winners
+	//Get Top Winners
 	var topFive = function(){
 		quests.find({'champion': {$ne : false} }).toArray(function(error, results){
 
