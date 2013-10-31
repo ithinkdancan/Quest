@@ -210,7 +210,7 @@ io.sockets.on('connection', function (socket) {
 	socket.on('grails:list', function(){
 
 		//get the top voted grails
-		db.collection('grails').find().sort({votes:-1}).skip(2).limit(30).toArray(function(error, grails){
+		db.collection('grails').find().sort({wins:-1,votes:-1}).skip(2).limit(30).toArray(function(error, grails){
 
 			//get the least voted grails
 			db.collection('grails').find().sort({votes:1}).limit(5).toArray(function(error, grailsLeast){
