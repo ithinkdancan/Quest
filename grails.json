@@ -1,60 +1,60 @@
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8beca" }, "name" : "Mister Tramps" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8becb" }, "name" : "Pinthouse Pizza" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8becc" }, "name" : "Jimmy Johns" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8becd" }, "name" : "P. Terry's" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bece" }, "name" : "Zen", "address" : "2900 W. Anderson Ln." }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8becf" }, "name" : "Hopdoddy Burger Bar", "address" : "2438 Anderson Ln. A" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed0" }, "name" : "Trudy's North Star", "address" : "8820 Burnet Rd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed1" }, "name" : "VERTS Kebap", "address" : "2438 W. Anderson Ln" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed2" }, "name" : "North By Northwest (NXNW)", "address" : "10010 N Capital of Texas Hwy" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed3" }, "name" : "Noodles & Company", "address" : "2525 W. Anderson Lane" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed4" }, "name" : "Z Tejas Southwestern Grill", "address" : "9400 Arboretum Blvd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed5" }, "name" : "Chinatown", "address" : "3407 Greystone Dr" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed6" }, "name" : "Pluckers Wing Bar", "address" : "9070 Research Blvd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed7" }, "name" : "Austin Terrier", "address" : "3435 Greystone Dr" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed8" }, "name" : "Satay", "address" : "3202 W Anderson Ln" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8beda" }, "name" : "Torchy's Tacos", "address" : "4211 Spicewood Springs Rd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bedb" }, "name" : "East Side Pies #3", "address" : "1809 W Anderson Ln" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bedc" }, "name" : "McAlister's Deli", "address" : "2525 W Anderson Ln" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bedd" }, "name" : "Hai Ky", "address" : "3808 Spicewood Springs Rd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bede" }, "name" : "Buca di Beppo", "address" : "3612 Tudor Blvd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bedf" }, "name" : "Top Notch", "address" : "7525 Burnet Rd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee0" }, "name" : "Madam Mam's", "address" : "2700 W Anderson Ln" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee1" }, "name" : "PhoNatic Vietnamese Cuisine", "address" : "2525 W Anderson Ln, Bldg 3, Suite 208" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee2" }, "name" : "Mighty Fine Burgers", "address" : "10515 N MO Pac Expy" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee3" }, "name" : "BJ's Restaurant & Brewhouse", "address" : "10515 N MO Pac Expy" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee4" }, "name" : "Elevation Burger", "address" : "2525 W Anderson Ln" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee5" }, "name" : "Lupe Tortilla - Austin - Arbor Walk", "address" : "10515 N MO Pac Expy Bldg R" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee6" }, "name" : "Whataburger", "address" : "2801 W Anderson Ln" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee7" }, "name" : "Dos Batos", "address" : "2525 W. Anderson Lane, Bldg 1, Suite 175" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee8" }, "name" : "Ramen Tatsu-ya", "address" : "8557 Research Blvd, #126" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee9" }, "name" : "Chipotle Mexican Grill", "address" : "2700 W Anderson Ln, Ste 204" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8beea" }, "name" : "Big Daddy’s Burgers & Bar", "address" : "9070 Research Blvd, #101" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8beeb" }, "name" : "Tarka Indian Kitchen", "address" : "2525 W Anderson Ln, Bldg 1, Ste 300" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8beec" }, "name" : "Baby Acapulco", "address" : "9505 Stonelake Blvd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8beed" }, "name" : "Pho Thaison", "address" : "2438 W Anderson Ln" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8beee" }, "name" : "Shu Shu's Asian Cuisine", "address" : "8303 Burnet Rd. Suite 1" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8beef" }, "name" : "Schlotzsky's", "address" : "2545 W Anderson Ln" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef0" }, "name" : "Iron Cactus Mexican Grill & Margarita Bar", "address" : "10001 Stonelake Blvd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef1" }, "name" : "Korea House", "address" : "2700 W Anderson Ln." }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef2" }, "name" : "CoCo's Cafe", "address" : "8557 Research Blvd, Ste 118" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef3" }, "name" : "McDonald's", "address" : "7950 Burnet Rd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef4" }, "name" : "Austin Beerworks", "address" : "3009 Industrial Ter" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef5" }, "name" : "Which Wich? Superior Sandwiches", "address" : "2525 W. Anderson Ln." }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef6" }, "name" : "Einstein Bros Bagels", "address" : "3022 W Anderson Ln" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef7" }, "name" : "Luby's", "address" : "8176 N MO Pac Expy" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef8" }, "name" : "Five Guys", "address" : "10000 Research Blvd." }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef9" }, "name" : "Marakesh Cafe & Grill", "address" : "3301 Steck Ave, #106" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8befa" }, "name" : "San Francisco Bakery", "address" : "2900 W Anderson Ln" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8befb" }, "name" : "Dairy Queen", "address" : "8300 Burnet Rd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8befc" }, "name" : "SONIC Drive In", "address" : "7708 Burnet Rd" }
-{ "_id" : { "$oid" : "522a0126fadc011d5bb8befd" }, "name" : "The Cheesecake Factory", "address" : "10000 Research Blvd" }
-{ "_id" : { "$oid" : "523c6b9c373643e3bc18592f" }, "name" : "Yellow Rose" }
-{ "_id" : { "$oid" : "52582de66a75c2e73c9e80a9" }, "name" : "TacoDeli" }
-{ "_id" : { "$oid" : "52582e586a75c2e73c9e80aa" }, "name" : "Amaya's Taco Village" }
-{ "_id" : { "$oid" : "52582e7b6a75c2e73c9e80ab" }, "name" : "Enchiladas Y Mas" }
-{ "_id" : { "$oid" : "52582e926a75c2e73c9e80ac" }, "name" : "The Frisco" }
-{ "_id" : { "$oid" : "525c21fc41c35e9bbcf29237" }, "name" : "Little Deli" }
-{ "_id" : { "$oid" : "525c220b41c35e9bbcf29238" }, "name" : "Garden Spot Cafe" }
-{ "_id" : { "$oid" : "525d882fa6d55bd50bbb48a3" }, "name" : "Mr. Gatti's" }
-{ "_id" : { "$oid" : "525ec09f585915dce10227ff" }, "name" : "Rudy's", "address" : "11570 Research Blvd" }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8beca" }, "name" : "Mister Tramps", "votes" : 18, "wins" : 3 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8becb" }, "name" : "Pinthouse Pizza", "votes" : 18, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8becc" }, "name" : "Jimmy Johns", "votes" : 9, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8becd" }, "name" : "P. Terry's", "votes" : 15 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bece" }, "address" : "2900 W. Anderson Ln.", "name" : "Zen", "votes" : 21, "wins" : 2 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8becf" }, "address" : "2438 Anderson Ln. A", "name" : "Hopdoddy Burger Bar", "votes" : 10 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed0" }, "address" : "8820 Burnet Rd", "name" : "Trudy's North Star", "votes" : 14, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed1" }, "address" : "2438 W. Anderson Ln", "name" : "VERTS Kebap", "votes" : 19, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed2" }, "address" : "10010 N Capital of Texas Hwy", "name" : "North By Northwest (NXNW)", "votes" : 10, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed3" }, "address" : "2525 W. Anderson Lane", "name" : "Noodles & Company", "votes" : 11 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed4" }, "address" : "9400 Arboretum Blvd", "name" : "Z Tejas Southwestern Grill", "votes" : 10 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed5" }, "address" : "3407 Greystone Dr", "name" : "Chinatown", "votes" : 11 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed6" }, "address" : "9070 Research Blvd", "name" : "Pluckers Wing Bar", "votes" : 19, "wins" : 2 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed7" }, "address" : "3435 Greystone Dr", "name" : "Austin Terrier", "votes" : 16 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bed8" }, "address" : "3202 W Anderson Ln", "name" : "Satay", "votes" : 12 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8beda" }, "address" : "4211 Spicewood Springs Rd", "name" : "Torchy's Tacos", "votes" : 20, "wins" : 3 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bedb" }, "address" : "1809 W Anderson Ln", "name" : "East Side Pies #3", "votes" : 16 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bedc" }, "address" : "2525 W Anderson Ln", "name" : "McAlister's Deli", "votes" : 7, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bedd" }, "address" : "3808 Spicewood Springs Rd", "name" : "Hai Ky", "votes" : 15, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bede" }, "address" : "3612 Tudor Blvd", "name" : "Buca di Beppo", "votes" : 15 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bedf" }, "address" : "7525 Burnet Rd", "name" : "Top Notch", "votes" : 21, "wins" : 2 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee0" }, "address" : "2700 W Anderson Ln", "name" : "Madam Mam's", "votes" : 19, "wins" : 2 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee1" }, "address" : "2525 W Anderson Ln, Bldg 3, Suite 208", "name" : "PhoNatic Vietnamese Cuisine", "votes" : 25, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee2" }, "address" : "10515 N MO Pac Expy", "name" : "Mighty Fine Burgers", "votes" : 28, "wins" : 2 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee3" }, "address" : "10515 N MO Pac Expy", "name" : "BJ's Restaurant & Brewhouse", "votes" : 15 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee4" }, "address" : "2525 W Anderson Ln", "name" : "Elevation Burger", "votes" : 8 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee5" }, "address" : "10515 N MO Pac Expy Bldg R", "name" : "Lupe Tortilla - Austin - Arbor Walk", "votes" : 8 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee6" }, "address" : "2801 W Anderson Ln", "name" : "Whataburger", "votes" : 5 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee7" }, "address" : "2525 W. Anderson Lane, Bldg 1, Suite 175", "name" : "Dos Batos", "votes" : 21, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee8" }, "address" : "8557 Research Blvd, #126", "name" : "Ramen Tatsu-ya", "votes" : 13, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bee9" }, "address" : "2700 W Anderson Ln, Ste 204", "name" : "Chipotle Mexican Grill", "votes" : 18 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8beea" }, "address" : "9070 Research Blvd, #101", "name" : "Big Daddy’s Burgers & Bar", "votes" : 19, "wins" : 4 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8beeb" }, "address" : "2525 W Anderson Ln, Bldg 1, Ste 300", "name" : "Tarka Indian Kitchen", "votes" : 31, "wins" : 2 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8beec" }, "address" : "9505 Stonelake Blvd", "name" : "Baby Acapulco", "votes" : 4 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8beed" }, "address" : "2438 W Anderson Ln", "name" : "Pho Thaison", "votes" : 16, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8beee" }, "address" : "8303 Burnet Rd. Suite 1", "name" : "Shu Shu's Asian Cuisine", "votes" : 25, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8beef" }, "address" : "2545 W Anderson Ln", "name" : "Schlotzsky's", "votes" : 6 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef0" }, "address" : "10001 Stonelake Blvd", "name" : "Iron Cactus Mexican Grill & Margarita Bar", "votes" : 10, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef1" }, "address" : "2700 W Anderson Ln.", "name" : "Korea House", "votes" : 28, "wins" : 2 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef2" }, "address" : "8557 Research Blvd, Ste 118", "name" : "CoCo's Cafe", "votes" : 6 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef3" }, "address" : "7950 Burnet Rd", "name" : "McDonald's", "votes" : 5, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef4" }, "address" : "3009 Industrial Ter", "name" : "Austin Beerworks", "votes" : 3 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef5" }, "address" : "2525 W. Anderson Ln.", "name" : "Which Wich? Superior Sandwiches", "votes" : 18 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef6" }, "address" : "3022 W Anderson Ln", "name" : "Einstein Bros Bagels", "votes" : 5 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef7" }, "address" : "8176 N MO Pac Expy", "name" : "Luby's", "votes" : 26, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef8" }, "address" : "10000 Research Blvd.", "name" : "Five Guys", "votes" : 16, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8bef9" }, "address" : "3301 Steck Ave, #106", "name" : "Marakesh Cafe & Grill", "votes" : 12, "wins" : 1 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8befa" }, "address" : "2900 W Anderson Ln", "name" : "San Francisco Bakery", "votes" : 10 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8befb" }, "address" : "8300 Burnet Rd", "name" : "Dairy Queen", "votes" : 3 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8befc" }, "address" : "7708 Burnet Rd", "name" : "SONIC Drive In", "votes" : 2 }
+{ "_id" : { "$oid" : "522a0126fadc011d5bb8befd" }, "address" : "10000 Research Blvd", "name" : "The Cheesecake Factory", "votes" : 9, "wins" : 1 }
+{ "_id" : { "$oid" : "523c6b9c373643e3bc18592f" }, "name" : "Yellow Rose", "votes" : 10 }
+{ "_id" : { "$oid" : "52582de66a75c2e73c9e80a9" }, "name" : "TacoDeli", "votes" : 6 }
+{ "_id" : { "$oid" : "52582e586a75c2e73c9e80aa" }, "name" : "Amaya's Taco Village", "votes" : 16, "wins" : 3 }
+{ "_id" : { "$oid" : "52582e7b6a75c2e73c9e80ab" }, "name" : "Enchiladas Y Mas", "votes" : 5 }
+{ "_id" : { "$oid" : "52582e926a75c2e73c9e80ac" }, "name" : "The Frisco", "votes" : 11 }
+{ "_id" : { "$oid" : "525c21fc41c35e9bbcf29237" }, "name" : "Little Deli", "votes" : 4 }
+{ "_id" : { "$oid" : "525c220b41c35e9bbcf29238" }, "name" : "Garden Spot Cafe", "votes" : 8 }
+{ "_id" : { "$oid" : "525d882fa6d55bd50bbb48a3" }, "name" : "Mr. Gatti's", "votes" : 5 }
+{ "_id" : { "$oid" : "525ec09f585915dce10227ff" }, "address" : "11570 Research Blvd", "name" : "Rudy's", "votes" : 6 }
