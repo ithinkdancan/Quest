@@ -7,7 +7,8 @@
     "socket.io": "~0.9.16",
     "mongoskin": "~0.6.0",
     "bower": "~1.2.2",
-    "node-static": "~0.7.1"
+    "node-static": "~0.7.1",
+    "aws-sdk": "~2.0.0-rc1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
