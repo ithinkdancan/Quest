@@ -109,27 +109,26 @@ io.sockets.on('connection', function (socket) {
 		var results = {};
 		var arrayResults = [];
 		var id;
-		var o;
 
 		qs.getQuest(quest_id, function(error, obj){
 			for (var i = 0; i < obj.votes.length; i++) {
 				for (var j = 0; j < obj.votes[i].length; j++) {
 					id = obj.votes[i][j];
 					results[id] = results[id] ? results[id]+1 : 1;
-				};
-			};
-
-			//store the votes in a sortable format
-			for (o in results){
-				arrayResults.push({id:o, votes: results[o]});
-				qs.updateGrailVotes(o, results[o], function(){})
+				}
 			}
 
-			var sortedResults = arrayResults.sort(function(a,b){ return b.votes - a.votes });
+			//store the votes in a sortable format
+			for (var o in results){
+				arrayResults.push({id:o, votes: results[o]});
+				qs.updateGrailVotes(o, results[o], function(){});
+			}
+
+			var sortedResults = arrayResults.sort(function(a,b){ return b.votes - a.votes; });
 
 			var grail = sortedResults[0];
 
-			champion(obj, grail.id)
+			champion(obj, grail.id);
 
 		});
 
@@ -152,13 +151,13 @@ io.sockets.on('connection', function (socket) {
 			if(obj.started){
 				socket.emit('quest:leave');
 			} else {
-				socket.set('currentQuest', obj._id, function (error) {
+				socket.set('currentQuest', obj._id, function () {
 					qs.addHero(obj._id, socket.id, function(){
 						updateQuest(obj);
 						sendQuests(true);
 					});
 				});
-			}	
+			}
 		});
 	});
 
@@ -172,7 +171,7 @@ io.sockets.on('connection', function (socket) {
 						sendQuests(true);
 					});
 				}
-			})
+			});
 		});
 	});
 
@@ -180,7 +179,7 @@ io.sockets.on('connection', function (socket) {
 	socket.on('quest:save', function (votes) {
 		socket.get('currentQuest', function (error, quest_id) {
 			qs.getQuest(quest_id, function(error, obj){
-				qs.saveVotes(obj._id, votes, function(){})
+				qs.saveVotes(obj._id, votes, function(){});
 				if(obj.votes.length+1 >= obj.heros.length){
 					fight(obj._id);
 				}
@@ -196,8 +195,8 @@ io.sockets.on('connection', function (socket) {
 					sendQuests(true);
 				});
 			}
-		})
-	})
+		});
+	});
 
 	//sent a list of grails
 	socket.on('grails:list', function(){
